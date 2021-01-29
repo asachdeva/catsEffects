@@ -1,0 +1,10 @@
+.idea/
+.metals
+.bloop
+target/
+project/metals.sbt
+project/project/
+output.json
+.bsp
+
+local/
