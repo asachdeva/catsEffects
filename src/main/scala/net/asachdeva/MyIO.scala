@@ -1,9 +1,9 @@
 package net
 package asachdeva
 
-import scala.concurrent.duration.FiniteDuration
-
+import cats.effect._
 import java.util.concurrent.TimeUnit
+import scala.concurrent.duration.FiniteDuration
 
 case class MyIO[A](unsafeRun: () => A) {
   def map[B](f: A => B): MyIO[B]           = MyIO(() => f(unsafeRun()))
@@ -12,6 +12,12 @@ case class MyIO[A](unsafeRun: () => A) {
 
 object MyIO {
   def putStr(s: => String): MyIO[Unit] = MyIO(() => println(s))
+}
+
+object TickingClock extends IOApp {
+  def run(args: List[String]): IO[ExitCode] = tickingClock.as(ExitCode.Success)
+
+  val tickingClock: IO[Unit] = IO(println("implement me"))
 }
 
 object Timing extends App { self =>
