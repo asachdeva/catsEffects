@@ -5,7 +5,7 @@ import Dependencies._
 // Reload Sbt on changes to sbt or dependencies
 Global / onChangedBuildSource := ReloadOnSourceChanges
 
-ThisBuild / scalaVersion := "2.13.4"
+ThisBuild / scalaVersion := "2.13.5"
 ThisBuild / startYear := Some(2021)
 ThisBuild / version := "0.1.0-SNAPSHOT"
 ThisBuild / organization := "net.asachdeva"
@@ -23,7 +23,7 @@ promptTheme := PromptTheme(
 )
 
 lazy val baseSettings: Seq[Setting[_]] = Seq(
-  scalaVersion := "2.13.4",
+  scalaVersion := "2.13.5",
   scalacOptions ++= Seq(
     "-Wconf:cat=unused-imports:info",
     "-Wconf:cat=unused-locals:info",
